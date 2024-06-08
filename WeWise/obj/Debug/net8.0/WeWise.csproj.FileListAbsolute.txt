@@ -47,3 +47,4 @@ C:\wwbo\WeWise\obj\Debug\net8.0\refint\WeWise.dll
 C:\wwbo\WeWise\obj\Debug\net8.0\WeWise.pdb
 C:\wwbo\WeWise\obj\Debug\net8.0\WeWise.genruntimeconfig.cache
 C:\wwbo\WeWise\obj\Debug\net8.0\ref\WeWise.dll
+C:\wwbo\WeWise\obj\Debug\net8.0\WeWise.sourcelink.json

@@ -1,6 +1,9 @@
+using System.Threading.Tasks;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Entities;
 using Domain.Interfaces;
+using MongoDB.Bson;
 
 namespace Presentation.Controllers
 {
@@ -36,6 +39,11 @@ namespace Presentation.Controllers
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] Client client)
         {
+            if (client.Id == ObjectId.Empty)
+            {
+                client.Id = ObjectId.GenerateNewId();
+            }
+            
             await _clientRepository.CreateClient(client);
             return CreatedAtAction(nameof(Get), new { id = client.Id }, client);
         }

@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using System;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace Domain.Entities
@@ -6,7 +7,8 @@ namespace Domain.Entities
     public class Client
     {
         [BsonId]
-        public ObjectId Id { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public ObjectId Id { get; set; } = ObjectId.GenerateNewId();
         public int ClientId { get; set; }
         public string? Name { get; set; }
         public string? Email { get; set; }
